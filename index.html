@@ -1,0 +1,163 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agrinho 2026</title>
+
+  <!-- Fontes semelhantes ao visual do layout -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- SEÇÃO 1: topo com título e imagem circular -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <h1>AGRINHO<br>2026</h1>
+        <p class="frase">
+          "Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente."
+        </p>
+      </div>
+
+      <div class="hero-right">
+        <!-- Troque pela sua imagem do concurso -->
+        <img src="./assets/logo-agrinho.jpg" alt="Concurso Agrinho Programação">
+      </div>
+    </div>
+  </header>
+
+  <!-- SEÇÃO 2: banner com foto grande e texto -->
+  <section class="banner-parana">
+    <div class="overlay">
+      <div class="container banner-content">
+        <h2>PARANÁ</h2>
+        <p>
+          O agronegócio do Paraná é um dos pilares da economia brasileira, destacando-se pela alta
+          produtividade e pelo equilíbrio entre produção e preservação ambiental.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 3: frase em faixa -->
+  <section class="faixa-texto">
+    <div class="container">
+      <p>
+        O Paraná é frequentemente citado como uma referência global em sustentabilidade no agronegócio, equilibrando alta produtividade com a preservação de recursos naturais. Em 2026, o estado mantém o título (conquistado por anos consecutivos) de estado mais sustentável do Brasil segundo rankings de competitividade e práticas ESG.
+      </p>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 4: três cards com imagens -->
+  <section class="cards">
+    <article class="card card1">
+      <div class="bolha video-trigger" data-video-id="graos" data-video="https://www.youtube.com/embed/NdcTTXxXsOU?si=uc9wIzrJ57qQvcl_?autoplay=1">Paraná amplia participação na produção nacional de grãos</div>
+    </article>
+    <article class="card card2">
+      <div class="bolha video-trigger" data-video-id="sustentavel" data-video="https://www.youtube.com/embed/W60i5AXB_xk?si=86JGva4tLfVAZhiq?autoplay=1">Paraná é eleito o estado mais sustentável do Brasil pela 4ª vez consecutiva</div>
+    </article>
+    <article class="card card3">
+      <div class="bolha video-trigger" data-video-id="sanepar" data-video="https://www.youtube.com/watch?v=q3OQW8svbgk">Paraná Avança: 100% Água Tratada e Esgoto Coletado com a Sanepar</div>
+    </article>
+  </section>
+
+  <!-- SEÇÃO 5: bloco "ENQUANTO ISSO" + caixa de notícias -->
+  <section class="noticias">
+    <div class="noticias-esquerda">
+      <img src="./assets/fundo-5.jpg" alt="Vista aérea área rural">
+      <h3>ENQUANTO<br>ISSO</h3>
+    </div>
+
+    <aside class="noticias-direita">
+      <h4>
+        <button
+          class="noticia-trigger"
+          type="button"
+          data-news-id="inauguracao"
+          data-news-title="Inauguração histórica em Jardim Alegre"
+          data-news-image="./assets/inauguracao.jpg"
+        >
+          Inauguração histórica em Jardim Alegre
+        </button>
+      </h4>
+      <p>Cooperativa inicia ações com hortas orgânicas em áreas de reforma agrária no Paraná.</p>
+
+      <h4>
+          <button
+          class="noticia-trigger"
+          type="button"
+          data-news-id="ambiental"
+          data-news-title="Educação Ambiental"
+          data-news-image="./assets/meio-ambiente.jpg"
+        >
+          Educação Ambiental
+        </button>
+        
+    </h4>
+      <p>Atividades de reciclagem para crianças e comunidade local.</p>
+
+      <h4>
+          <button
+          class="noticia-trigger"
+          type="button"
+          data-news-id="conselho"
+          data-news-title="Conselho Municipal"
+          data-news-image="./assets/conselho.jpg"
+        >
+           Conselho Municipal
+        </button>
+       
+    </h4>
+      <p>Conselho municipal discute ações para fortalecer o meio rural e o pequeno produtor.</p>
+    </aside>
+  </section>
+
+  <!-- SEÇÃO 6: feira + galeria circular -->
+  <section class="feira">
+    <div class="feira-esquerda">
+      <img src="./assets/fundo-6.png" alt="Feira do produtor">
+      <p>Quando: todas as quartas-feiras. Local: Avenida Paraná, perto do monumento.</p>
+    </div>
+
+    <div class="feira-direita">
+      <img src="./assets/link-1.png" alt="Muda de planta">
+      <img src="./assets/link-2.png" alt="Verduras">
+      <img src="./assets/link-3.png" alt="Frutas">
+      <img src="./assets/link-4.png" alt="Batatas">
+    </div>
+  </section>
+  <div class="video-modal" id="video-modal" aria-hidden="true">
+    <div class="video-modal-content" role="dialog" aria-modal="true" aria-label="Vídeo">
+      <button class="video-modal-close" id="close-video-modal" type="button" aria-label="Fechar vídeo">×</button>
+      <iframe
+        id="video-frame"
+        src=""
+        title="Vídeo do Paraná"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <div class="video-transcricao">
+        <h4>Transcrição do vídeo</h4>
+        <p id="video-transcript-text">Selecione um vídeo para ver a transcrição.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="news-modal" id="news-modal" aria-hidden="true">
+    <div class="news-modal-content" role="dialog" aria-modal="true" aria-label="Notícia">
+      <button class="news-modal-close" id="close-news-modal" type="button" aria-label="Fechar notícia">×</button>
+      <img id="news-modal-image" src="" alt="" />
+      <h4 id="news-modal-title"></h4>
+      <button class="news-read-button" id="news-read-button" type="button">Ler notícia</button>
+    </div>
+  </div>
+
+  <script src="script-video.js"></script>
+  <script src="script-noticias.js"></script>
+</body>
+</html>
