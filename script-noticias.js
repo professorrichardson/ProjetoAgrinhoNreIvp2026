@@ -3,6 +3,7 @@ const newsModalImage = document.getElementById('news-modal-image');
 const newsModalTitle = document.getElementById('news-modal-title');
 const closeNewsModalButton = document.getElementById('close-news-modal');
 const readNewsButton = document.getElementById('news-read-button');
+const newsLinkButton = document.getElementById('news-link-button');
 const newsTriggers = document.querySelectorAll('.noticia-trigger');
 
 // EDITE AQUI: coloque o texto completo que deve ser lido para cada noticia.
@@ -48,6 +49,7 @@ quem vive e produz no meio rural`,
 };
 
 let activeNewsText = '';
+let activeNewsUrl = '';
 
 function stopNewsReading() {
   if ('speechSynthesis' in window) {
@@ -60,11 +62,13 @@ function openNewsModal(trigger) {
   const title = trigger.dataset.newsTitle || 'Notícia';
   const image = trigger.dataset.newsImage || '';
   const newsId = trigger.dataset.newsId || '';
+  const newsUrl = trigger.dataset.newsUrl || '';
 
   newsModalTitle.textContent = title;
   newsModalImage.src = image;
   newsModalImage.alt = title;
   activeNewsText = NEWS_TEXTS[newsId] || '';
+  activeNewsUrl = newsUrl;
 
   newsModal.classList.add('active');
   document.body.classList.add('modal-open');
@@ -77,6 +81,7 @@ function closeNewsModal() {
   newsModalImage.src = '';
   newsModalImage.alt = '';
   newsModalTitle.textContent = '';
+  activeNewsUrl = '';
 }
 
 function readNews() {
@@ -107,11 +112,21 @@ function readNews() {
   window.speechSynthesis.speak(utterance);
 }
 
+function goToFullNews() {
+  if (!activeNewsUrl.trim()) {
+    alert('Adicione a URL da notícia no data-news-url do botão no index.html.');
+    return;
+  }
+
+  window.open(activeNewsUrl, '_blank', 'noopener');
+}
+
 newsTriggers.forEach((trigger) => {
   trigger.addEventListener('click', () => openNewsModal(trigger));
 });
 
 readNewsButton.addEventListener('click', readNews);
+newsLinkButton.addEventListener('click', goToFullNews);
 closeNewsModalButton.addEventListener('click', closeNewsModal);
 
 newsModal.addEventListener('click', (event) => {

@@ -403,11 +403,13 @@ body.modal-open {
 
 .news-modal-content img {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+  height: auto;
+  max-height: 52vh;
+  object-fit: contain;
   border-radius: 10px;
   margin-bottom: 12px;
   background: #ddd;
+  display: block;
 }
 
 .news-modal-content h4 {
@@ -422,6 +424,22 @@ body.modal-open {
   border-radius: 999px;
   padding: 12px 20px;
   background: var(--verde-escuro);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.news-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.news-link-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 20px;
+  background: var(--vinho);
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
