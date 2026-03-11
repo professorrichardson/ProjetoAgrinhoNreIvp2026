@@ -1,11 +1,11 @@
-const modal = document.getElementById('video-modal');
-const frame = document.getElementById('video-frame');
-const transcriptText = document.getElementById('video-transcript-text');
-const closeButton = document.getElementById('close-video-modal');
-const triggers = document.querySelectorAll('.video-trigger');
+const modalVideo = document.getElementById('modal-video');
+const frameVideo = document.getElementById('frame-video');
+const textoTranscricaoVideo = document.getElementById('texto-transcricao-video');
+const botaoFecharVideo = document.getElementById('fechar-modal-video');
+const gatilhosVideo = document.querySelectorAll('.gatilho-video');
 
-// EDITE AQUI: transcricao de cada video do modal.
-const VIDEO_TRANSCRIPTS = {
+// EDITE AQUI: transcricoes de cada video do modal.
+const TRANSCRICOES_VIDEO = {
   graos: `
 Olá, você que nos acompanha. O Paraná deve atingir uma participação maior nesse ano em relação ao restante do país no que se refere à safra paranaense.
 
@@ -28,7 +28,7 @@ Como se vê, o Paraná deve ter um desempenho relevante na atual safra, sem cont
 Obrigado, amigos. Voltamos no próximo programa.
 `,
   sustentavel: `
-  Pelo quarto ano consecutivo, o Paraná é considerado o estado mais sustentável do Brasil, com nota máxima no ranking de competitividade dos estados divulgado pelo Centro de Liderança Pública.
+Pelo quarto ano consecutivo, o Paraná é considerado o estado mais sustentável do Brasil, com nota máxima no ranking de competitividade dos estados divulgado pelo Centro de Liderança Pública.
 
 Além de liderar o eixo ligado ao meio ambiente, o estado também apresenta o maior crescimento do país no índice de potencial de mercado.
 
@@ -55,7 +55,7 @@ Ele destacou que o estado conseguiu criar um equilíbrio entre preservação amb
 Segundo o governador, quando a máquina pública funciona e o setor produtivo também, o resultado é um estado que cresce cada vez mais.
   `,
   sanepar: `
-  Pelo segundo ano seguido, o Paraná foi considerado o estado mais inovador e sustentável do Brasil, segundo o ranking da consultoria Bright Cities.
+Pelo segundo ano seguido, o Paraná foi considerado o estado mais inovador e sustentável do Brasil, segundo o ranking da consultoria Bright Cities.
 
 O ranking leva em conta indicadores utilizados pela Organização das Nações Unidas (ONU) para orientar melhores práticas de desenvolvimento sustentável e inclusivo.
 
@@ -63,60 +63,60 @@ Entre os destaques do estado, as cidades de Curitiba, Maringá e Londrina aparec
   `,
 };
 
-function buildEmbedUrl(rawUrl) {
+function montarUrlEmbed(urlBruta) {
   try {
-    const url = new URL(rawUrl);
-    let videoId = '';
+    const url = new URL(urlBruta);
+    let idVideo = '';
 
     if (url.hostname.includes('youtu.be')) {
-      videoId = url.pathname.slice(1);
+      idVideo = url.pathname.slice(1);
     } else if (url.hostname.includes('youtube.com')) {
       if (url.pathname.includes('/embed/')) {
-        videoId = url.pathname.split('/embed/')[1];
+        idVideo = url.pathname.split('/embed/')[1];
       } else {
-        videoId = url.searchParams.get('v') || '';
+        idVideo = url.searchParams.get('v') || '';
       }
     }
 
-    videoId = videoId.split('?')[0].split('&')[0];
-    if (!videoId) return rawUrl;
-    return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&playsinline=1&rel=0&cc_load_policy=1&hl=pt-BR`;
+    idVideo = idVideo.split('?')[0].split('&')[0];
+    if (!idVideo) return urlBruta;
+    return `https://www.youtube.com/embed/${idVideo}?autoplay=1&mute=0&playsinline=1&rel=0&cc_load_policy=1&hl=pt-BR`;
   } catch {
-    return rawUrl;
+    return urlBruta;
   }
 }
 
-function openModal(trigger) {
-  const videoUrl = trigger.dataset.video;
-  const videoId = trigger.dataset.videoId;
-  if (!videoUrl) return;
+function abrirModalVideo(gatilho) {
+  const urlVideo = gatilho.dataset.urlVideo;
+  const idVideo = gatilho.dataset.idVideo;
+  if (!urlVideo) return;
 
-  transcriptText.textContent = VIDEO_TRANSCRIPTS[videoId] || 'Transcricao ainda nao cadastrada para este video.';
-  frame.src = buildEmbedUrl(videoUrl);
-  modal.classList.add('active');
-  document.body.classList.add('modal-open');
+  textoTranscricaoVideo.textContent = TRANSCRICOES_VIDEO[idVideo] || 'Transcricao ainda nao cadastrada para este video.';
+  frameVideo.src = montarUrlEmbed(urlVideo);
+  modalVideo.classList.add('ativo');
+  document.body.classList.add('modal-aberto');
 }
 
-function closeModal() {
-  frame.src = '';
-  modal.classList.remove('active');
-  document.body.classList.remove('modal-open');
+function fecharModalVideo() {
+  frameVideo.src = '';
+  modalVideo.classList.remove('ativo');
+  document.body.classList.remove('modal-aberto');
 }
 
-triggers.forEach((trigger) => {
-  trigger.addEventListener('click', () => {
-    openModal(trigger);
+gatilhosVideo.forEach((gatilho) => {
+  gatilho.addEventListener('click', () => {
+    abrirModalVideo(gatilho);
   });
 });
 
-closeButton.addEventListener('click', closeModal);
+botaoFecharVideo.addEventListener('click', fecharModalVideo);
 
-modal.addEventListener('click', (event) => {
-  if (event.target === modal) closeModal();
+modalVideo.addEventListener('click', (event) => {
+  if (event.target === modalVideo) fecharModalVideo();
 });
 
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && modal.classList.contains('active')) {
-    closeModal();
+  if (event.key === 'Escape' && modalVideo.classList.contains('ativo')) {
+    fecharModalVideo();
   }
 });

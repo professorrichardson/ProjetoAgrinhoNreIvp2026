@@ -15,16 +15,16 @@
 </head>
 <body>
   <!-- SEÇÃO 1: topo com título e imagem circular -->
-  <header class="hero">
-    <div class="container hero-grid">
-      <div class="hero-left">
+  <header class="topo">
+    <div class="conteiner topo-grade">
+      <div class="topo-esquerda">
         <h1>AGRINHO<br>2026</h1>
         <p class="frase">
           "Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente."
         </p>
       </div>
 
-      <div class="hero-right">
+      <div class="topo-direita">
         <!-- Troque pela sua imagem do concurso -->
         <img src="./assets/logo-agrinho.jpg" alt="Concurso Agrinho Programação">
       </div>
@@ -33,8 +33,8 @@
 
   <!-- SEÇÃO 2: banner com foto grande e texto -->
   <section class="banner-parana">
-    <div class="overlay">
-      <div class="container banner-content">
+    <div class="sobreposicao">
+      <div class="conteiner banner-conteudo">
         <h2>PARANÁ</h2>
         <p>
           O agronegócio do Paraná é um dos pilares da economia brasileira, destacando-se pela alta
@@ -46,25 +46,27 @@
 
   <!-- SEÇÃO 3: frase em faixa -->
   <section class="faixa-texto">
-    <div class="container">
+    <div class="conteiner">
       <p>
         O Paraná é frequentemente citado como uma referência global em sustentabilidade no agronegócio, equilibrando alta produtividade com a preservação de recursos naturais. Em 2026, o estado mantém o título (conquistado por anos consecutivos) de estado mais sustentável do Brasil segundo rankings de competitividade e práticas ESG.
       </p>
     </div>
   </section>
 
-  <!-- SEÇÃO 4: três cards com imagens -->
-  <section class="cards">
-    <article class="card card1">
-      <div class="bolha video-trigger" data-video-id="graos" data-video="https://www.youtube.com/embed/NdcTTXxXsOU?si=uc9wIzrJ57qQvcl_?autoplay=1">Paraná amplia participação na produção nacional de grãos</div>
+  <!-- SEÇÃO 4: três cartoes com imagens -->
+  <section class="cartoes">
+    <article class="cartao cartao-1">
+      <div class="bolha gatilho-video" data-id-video="graos" data-url-video="https://www.youtube.com/embed/NdcTTXxXsOU?si=uc9wIzrJ57qQvcl_?autoplay=1">Paraná amplia participação na produção nacional de grãos</div>
     </article>
-    <article class="card card2">
-      <div class="bolha video-trigger" data-video-id="sustentavel" data-video="https://www.youtube.com/embed/W60i5AXB_xk?si=86JGva4tLfVAZhiq?autoplay=1">Paraná é eleito o estado mais sustentável do Brasil pela 4ª vez consecutiva</div>
+    <article class="cartao cartao-2">
+      <div class="bolha gatilho-video" data-id-video="sustentavel" data-url-video="https://www.youtube.com/embed/W60i5AXB_xk?si=86JGva4tLfVAZhiq?autoplay=1">Paraná é eleito o estado mais sustentável do Brasil pela 4ª vez consecutiva</div>
     </article>
-    <article class="card card3">
-      <div class="bolha video-trigger" data-video-id="sanepar" data-video="https://www.youtube.com/watch?v=q3OQW8svbgk">Paraná Avança: 100% Água Tratada e Esgoto Coletado com a Sanepar</div>
+    <article class="cartao cartao-3">
+      <div class="bolha gatilho-video" data-id-video="sanepar" data-url-video="https://www.youtube.com/watch?v=q3OQW8svbgk">Paraná Avança: 100% Água Tratada e Esgoto Coletado com a Sanepar</div>
     </article>
   </section>
+
+  
 
   <!-- SEÇÃO 5: bloco "ENQUANTO ISSO" + caixa de notícias -->
   <section class="noticias">
@@ -76,12 +78,12 @@
     <aside class="noticias-direita">
       <h4>
         <button
-          class="noticia-trigger"
+          class="gatilho-noticia"
           type="button"
-          data-news-id="inauguracao"
-          data-news-title="Inauguração histórica em Jardim Alegre"
-          data-news-image="./assets/inauguracao.jpg"
-          data-news-url="https://www.jardimalegre.pr.gov.br/noticia?noticia=5655"
+          data-id-noticia="inauguracao"
+          data-titulo-noticia="Inauguração histórica em Jardim Alegre"
+          data-imagem-noticia="./assets/inauguracao.jpg"
+          data-url-noticia="https://www.jardimalegre.pr.gov.br/noticia?noticia=5655"
         >
           Inauguração histórica em Jardim Alegre
         </button>
@@ -90,12 +92,12 @@
 
       <h4>
           <button
-          class="noticia-trigger"
+          class="gatilho-noticia"
           type="button"
-          data-news-id="ambiental"
-          data-news-title="Educação Ambiental"
-          data-news-image="./assets/meio-ambiente.jpg"
-          data-news-url="https://www.jardimalegre.pr.gov.br/noticia?noticia=6132"
+          data-id-noticia="ambiental"
+          data-titulo-noticia="Educação Ambiental"
+          data-imagem-noticia="./assets/meio-ambiente.jpg"
+          data-url-noticia="https://www.jardimalegre.pr.gov.br/noticia?noticia=6132"
         >
           Educação Ambiental
         </button>
@@ -105,12 +107,12 @@
 
       <h4>
           <button
-          class="noticia-trigger"
+          class="gatilho-noticia"
           type="button"
-          data-news-id="conselho"
-          data-news-title="Conselho Municipal"
-          data-news-image="./assets/conselho.jpg"
-          data-news-url="https://www.jardimalegre.pr.gov.br/noticia?noticia=6112"
+          data-id-noticia="conselho"
+          data-titulo-noticia="Conselho Municipal"
+          data-imagem-noticia="./assets/conselho.jpg"
+          data-url-noticia="https://www.jardimalegre.pr.gov.br/noticia?noticia=6112"
         >
            Conselho Municipal
         </button>
@@ -134,36 +136,156 @@
       <img src="./assets/link-4.png" alt="Batatas">
     </div>
   </section>
-  <div class="video-modal" id="video-modal" aria-hidden="true">
-    <div class="video-modal-content" role="dialog" aria-modal="true" aria-label="Vídeo">
-      <button class="video-modal-close" id="close-video-modal" type="button" aria-label="Fechar vídeo">×</button>
+
+  <section class="chamada-quiz">
+    <div class="conteiner chamada-quiz-conteiner">
+      <h3>Pronto para testar seu conhecimento?</h3>
+      <button class="botao-abrir-quiz" id="botao-abrir-quiz" type="button">
+        Abrir mini quiz
+      </button>
+    </div>
+  </section>
+  <div class="modal-video" id="modal-video" aria-hidden="true">
+    <div class="modal-video-conteudo" role="dialog" aria-modal="true" aria-label="Vídeo">
+      <button class="modal-video-fechar" id="fechar-modal-video" type="button" aria-label="Fechar vídeo">×</button>
       <iframe
-        id="video-frame"
+        id="frame-video"
         src=""
         title="Vídeo do Paraná"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
-      <div class="video-transcricao">
+      <div class="transcricao-video">
         <h4>Transcrição do vídeo</h4>
-        <p id="video-transcript-text">Selecione um vídeo para ver a transcrição.</p>
+        <p id="texto-transcricao-video">Selecione um vídeo para ver a transcrição.</p>
       </div>
     </div>
   </div>
 
-  <div class="news-modal" id="news-modal" aria-hidden="true">
-    <div class="news-modal-content" role="dialog" aria-modal="true" aria-label="Notícia">
-      <button class="news-modal-close" id="close-news-modal" type="button" aria-label="Fechar notícia">×</button>
-      <img id="news-modal-image" src="" alt="" />
-      <h4 id="news-modal-title"></h4>
-      <div class="news-actions">
-        <button class="news-read-button" id="news-read-button" type="button">Ler notícia</button>
-        <button class="news-link-button" id="news-link-button" type="button">Ir para notícia</button>
+  <div class="modal-noticia" id="modal-noticia" aria-hidden="true">
+    <div class="modal-noticia-conteudo" role="dialog" aria-modal="true" aria-label="Notícia">
+      <button class="modal-noticia-fechar" id="fechar-modal-noticia" type="button" aria-label="Fechar notícia">×</button>
+      <img id="imagem-modal-noticia" src="" alt="" />
+      <h4 id="titulo-modal-noticia"></h4>
+      <div class="acoes-noticia">
+        <button class="botao-ler-noticia" id="botao-ler-noticia" type="button">Ler notícia</button>
+        <button class="botao-link-noticia" id="botao-link-noticia" type="button">Ir para notícia</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-quiz" id="modal-quiz" aria-hidden="true">
+    <div class="modal-quiz-conteudo" role="dialog" aria-modal="true" aria-label="Mini quiz">
+      <button class="modal-quiz-fechar" id="fechar-modal-quiz" type="button" aria-label="Fechar quiz">×</button>
+
+      <div class="quiz" id="mini-quiz">
+        <div class="quiz-conteiner">
+          <div class="quiz-introducao">
+            <h2>Mini Quiz do Agrinho</h2>
+            <p>
+              Teste seus conhecimentos sobre o agronegócio sustentável do Paraná. São 5 perguntas rápidas.
+            </p>
+          </div>
+
+          <form class="formulario-quiz" id="formulario-quiz">
+            <div class="progresso-quiz">
+              <span id="passo-quiz">1</span>/<span id="total-quiz">5</span>
+            </div>
+
+            <div class="etapas-quiz">
+              <div class="etapa-quiz ativo" data-step="1">
+                <h3 class="titulo-pergunta-quiz">1) Qual é o principal destaque do agronegócio do Paraná citado no projeto?</h3>
+                <div class="opcoes-quiz">
+                  <label class="opcao-quiz">
+                    <input type="radio" name="q1" value="a" /> Alta produtividade com preservação ambiental
+                  </label>
+                  <label class="opcao-quiz" data-correta="true">
+                    <input type="radio" name="q1" value="b" /> Equilíbrio entre produção e preservação ambiental
+                  </label>
+                  <label class="opcao-quiz">
+                    <input type="radio" name="q1" value="c" /> Foco exclusivo em exportação de grãos
+                  </label>
+                </div>
+                <button class="botao-proximo-quiz" type="button" disabled>Próximo</button>
+              </div>
+
+              <div class="etapa-quiz" data-step="2">
+                <h3 class="titulo-pergunta-quiz">2) Segundo o conteúdo, o Paraná é referência global em:</h3>
+                <div class="opcoes-quiz">
+                  <label class="opcao-quiz" data-correta="true">
+                    <input type="radio" name="q2" value="a" /> Sustentabilidade no agronegócio
+                  </label>
+                  <label class="opcao-quiz">
+                    <input type="radio" name="q2" value="b" /> Pesca industrial
+                  </label>
+                  <label class="opcao-quiz">
+                    <input type="radio" name="q2" value="c" /> Mineração de ferro
+                  </label>
+                </div>
+                <button class="botao-proximo-quiz" type="button" disabled>Próximo</button>
+              </div>
+
+              <div class="etapa-quiz" data-step="3">
+                <h3 class="titulo-pergunta-quiz">3) O evento da feira do produtor acontece:</h3>
+                <div class="opcoes-quiz">
+                  <label class="opcao-quiz" data-correta="true">
+                    <input type="radio" name="q3" value="a" /> Todas as quartas-feiras
+                  </label>
+                  <label class="opcao-quiz">
+                    <input type="radio" name="q3" value="b" /> Apenas aos domingos
+                  </label>
+                  <label class="opcao-quiz">
+                    <input type="radio" name="q3" value="c" /> Somente uma vez por mês
+                  </label>
+                </div>
+                <button class="botao-proximo-quiz" type="button" disabled>Próximo</button>
+              </div>
+
+              <div class="etapa-quiz" data-step="4">
+                <h3 class="titulo-pergunta-quiz">4) Qual tema aparece na seção de notícias?</h3>
+                <div class="opcoes-quiz">
+                  <label class="opcao-quiz">
+                    <input type="radio" name="q4" value="a" /> Lançamento de satélites
+                  </label>
+                  <label class="opcao-quiz" data-correta="true">
+                    <input type="radio" name="q4" value="b" /> Educação ambiental
+                  </label>
+                  <label class="opcao-quiz">
+                    <input type="radio" name="q4" value="c" /> Turismo de luxo
+                  </label>
+                </div>
+                <button class="botao-proximo-quiz" type="button" disabled>Próximo</button>
+              </div>
+
+              <div class="etapa-quiz" data-step="5">
+                <h3 class="titulo-pergunta-quiz">5) O Paraná foi eleito o estado mais sustentável do Brasil pela:</h3>
+                <div class="opcoes-quiz">
+                  <label class="opcao-quiz">
+                    <input type="radio" name="q5" value="a" /> 1ª vez consecutiva
+                  </label>
+                  <label class="opcao-quiz" data-correta="true">
+                    <input type="radio" name="q5" value="b" /> 4ª vez consecutiva
+                  </label>
+                  <label class="opcao-quiz">
+                    <input type="radio" name="q5" value="c" /> 10ª vez consecutiva
+                  </label>
+                </div>
+                <button class="botao-proximo-quiz" type="button" disabled>Finalizar</button>
+              </div>
+            </div>
+
+            <div class="resultado-quiz" id="resultado-quiz" aria-live="polite"></div>
+            <div class="acoes-quiz oculto" id="acoes-quiz">
+              <button class="botao-reiniciar-quiz" type="button" id="botao-reiniciar-quiz">Reiniciar</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
 
   <script src="script-video.js"></script>
   <script src="script-noticias.js"></script>
+  <script src="script-quiz.js"></script>
 </body>
 </html>

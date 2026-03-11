@@ -1,0 +1,190 @@
+/* BASE CSS - Estrutura inicial do projeto */
+
+/* VARIAVEIS DE COR (AJUSTE AQUI) */
+:root {
+  --verde-oliva: #7f8d3d;
+  --verde-escuro: #4f5f2b;
+  --vinho: #5a022f;
+  --bege: #c5a86f;
+  --azul-caixa: #7f9198;
+  --branco: #ffffff;
+}
+
+/* RESET BASICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CONFIGURACAO GLOBAL */
+body {
+  font-family: "Playfair Display", serif;
+  background: #f4f1e8;
+  color: var(--branco);
+  line-height: 1.5;
+}
+
+.conteiner {
+  width: min(1150px, 92%);
+  margin: 0 auto;
+}
+
+/* SECAO TOPO */
+.topo {
+  background: var(--verde-oliva);
+  padding: 52px 0;
+}
+
+.topo-grade {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+/* BANNER */
+.banner {
+  min-height: 50vh;
+  background: #333; /* Troque pela imagem: background: url(...) center / cover no-repeat; */
+}
+
+.sobreposicao {
+  background: rgba(0, 0, 0, 0.3);
+  min-height: inherit;
+}
+
+.banner-conteudo {
+  min-height: 50vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+/* FAIXA DE TEXTO */
+.faixa-texto {
+  background: var(--verde-oliva);
+  text-align: center;
+  padding: 28px 0;
+}
+
+/* CARTOES */
+.cartoes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cartao {
+  min-height: 320px;
+  display: grid;
+  place-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.bolha {
+  width: min(230px, 90%);
+  padding: 18px;
+  border: 1px solid #fff;
+  border-radius: 999px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+/* NOTICIAS */
+.noticias {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  background: var(--verde-escuro);
+}
+
+.noticias-esquerda img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 360px;
+}
+
+.noticias-direita {
+  margin: 52px;
+  background: var(--azul-caixa);
+  padding: 32px;
+}
+
+/* FEIRA */
+.feira {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  background: var(--bege);
+}
+
+.feira-esquerda img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.feira-direita {
+  padding: 34px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 28px;
+  align-content: center;
+  justify-items: center;
+}
+
+.feira-direita img {
+  width: min(230px, 100%);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* CHAMADA FINAL */
+.chamada-final {
+  background: var(--verde-oliva);
+  padding: 34px 0 44px;
+}
+
+.chamada-final-conteiner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+/* RESPONSIVIDADE BASICA */
+@media (max-width: 980px) {
+  .topo-grade,
+  .banner-conteudo,
+  .noticias,
+  .feira {
+    grid-template-columns: 1fr;
+  }
+
+  .cartoes {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .noticias-direita {
+    margin: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .cartoes {
+    grid-template-columns: 1fr;
+  }
+
+  .feira-direita {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    padding: 20px;
+  }
+
+  .noticias-direita {
+    padding: 22px;
+  }
+}

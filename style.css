@@ -26,25 +26,25 @@ body {
 }
 
 /* Container central para limitar largura de conteúdo */
-.container {
+.conteiner {
   width: min(1150px, 92%);
   margin: 0 auto;
 }
 
 /* HERO */
-.hero {
+.topo {
   background: var(--verde-oliva);
   padding: 52px 0;
 }
 
-.hero-grid {
+.topo-grade {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 40px;
 }
 
-.hero-left h1 {
+.topo-esquerda h1 {
   font-family: "Cinzel", serif;
   color: var(--vinho);
   font-size: clamp(2.2rem, 7vw, 5.2rem);
@@ -62,7 +62,7 @@ body {
   font-size: 1.1rem;
 }
 
-.hero-right img {
+.topo-direita img {
   width: min(520px, 100%);
   aspect-ratio: 1 / 1;
   object-fit: cover;
@@ -77,12 +77,12 @@ body {
   background: url("./assets/Fundo-1.png") center / cover no-repeat;
 }
 
-.overlay {
+.sobreposicao {
   background: linear-gradient(to right, rgba(0,0,0,.35), rgba(0,0,0,.2));
   min-height: inherit;
 }
 
-.banner-content {
+.banner-conteudo {
   min-height: 58vh;
   display: flex;
   justify-content: space-between;
@@ -90,13 +90,13 @@ body {
   gap: 24px;
 }
 
-.banner-content h2 {
+.banner-conteudo h2 {
   font-family: "Cinzel", serif;
   font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 400;
 }
 
-.banner-content p {
+.banner-conteudo p {
   max-width: 520px;
   font-size: clamp(1rem, 2vw, 1.8rem);
 }
@@ -114,12 +114,12 @@ body {
 }
 
 /* CARDS */
-.cards {
+.cartoes {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 
-.card {
+.cartao {
   min-height: 340px;
   display: grid;
   place-items: center;
@@ -127,9 +127,9 @@ body {
   background-position: center;
 }
 
-.card1 { background-image: url("./assets/fundo-2.jpeg"); }
-.card2 { background-image: url("./assets/fundo-3.png"); }
-.card3 { background-image: url("./assets/fundo-4.png"); }
+.cartao-1 { background-image: url("./assets/fundo-2.jpeg"); }
+.cartao-2 { background-image: url("./assets/fundo-3.png"); }
+.cartao-3 { background-image: url("./assets/fundo-4.png"); }
 
 .bolha {
   width: min(230px, 90%);
@@ -182,7 +182,7 @@ body {
   text-decoration: underline;
 }
 
-.noticia-trigger {
+.gatilho-noticia {
   border: 0;
   background: transparent;
   color: inherit;
@@ -192,7 +192,7 @@ body {
   cursor: pointer;
 }
 
-.noticia-trigger:hover {
+.gatilho-noticia:hover {
   opacity: 0.82;
 }
 
@@ -240,31 +240,40 @@ body {
 
 /* RESPONSIVIDADE: tablets */
 @media (max-width: 980px) {
-  .hero-grid,
-  .banner-content,
+  .topo-grade,
+  .banner-conteudo,
   .noticias,
   .feira {
     grid-template-columns: 1fr;
   }
 
-  .banner-content {
+  .banner-conteudo {
     padding: 42px 0;
     align-items: flex-start;
     min-height: auto;
   }
 
-  .cards {
+  .cartoes {
     grid-template-columns: 1fr 1fr;
   }
 
   .noticias-direita {
     margin: 0;
   }
+
+  .quiz-conteiner {
+    grid-template-columns: 1fr;
+  }
+
+  .chamada-quiz-conteiner {
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 /* RESPONSIVIDADE: celulares */
 @media (max-width: 640px) {
-  .hero {
+  .topo {
     padding: 28px 0;
   }
 
@@ -273,11 +282,11 @@ body {
     font-size: 1rem;
   }
 
-  .cards {
+  .cartoes {
     grid-template-columns: 1fr;
   }
 
-  .card {
+  .cartao {
     min-height: 290px;
   }
 
@@ -291,23 +300,39 @@ body {
     padding: 22px;
   }
 
-  .video-transcricao {
+  .transcricao-video {
     display: none;
+  }
+
+  .formulario-quiz {
+    padding: 18px;
+  }
+
+  .modal-quiz-conteudo {
+    padding: 16px;
+  }
+
+  .opcoes-quiz {
+    grid-template-columns: 1fr;
+  }
+
+  .opcao-quiz {
+    aspect-ratio: auto;
   }
 }
 
 /* POPUP DE VIDEO */
-.bolha.video-trigger {
+.bolha.gatilho-video {
   cursor: pointer;
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.bolha.video-trigger:hover {
+.bolha.gatilho-video:hover {
   transform: scale(1.04);
   background: rgba(0, 0, 0, 0.52);
 }
 
-.video-modal {
+.modal-video {
   position: fixed;
   inset: 0;
   display: none;
@@ -317,11 +342,11 @@ body {
   z-index: 999;
 }
 
-.video-modal.active {
+.modal-video.ativo {
   display: grid;
 }
 
-.video-modal-content {
+.modal-video-conteudo {
   position: relative;
   width: min(920px, 94vw);
   background: #000;
@@ -332,14 +357,14 @@ body {
   flex-direction: column;
 }
 
-.video-modal-content iframe {
+.modal-video-conteudo iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 0;
   display: block;
 }
 
-.video-transcricao {
+.transcricao-video {
   padding: 16px;
   background: #f4f1e8;
   color: #222;
@@ -347,18 +372,18 @@ body {
   max-height: 32vh;
 }
 
-.video-transcricao h4 {
+.transcricao-video h4 {
   font-family: "Cinzel", serif;
   font-size: 1.2rem;
   margin: 0 0 8px;
 }
 
-.video-transcricao p {
+.transcricao-video p {
   margin: 0;
   line-height: 1.55;
 }
 
-.video-modal-close {
+.modal-video-fechar {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -373,12 +398,12 @@ body {
   cursor: pointer;
 }
 
-body.modal-open {
+body.modal-aberto {
   overflow: hidden;
 }
 
 /* POPUP DE NOTICIA */
-.news-modal {
+.modal-noticia {
   position: fixed;
   inset: 0;
   display: none;
@@ -388,11 +413,11 @@ body.modal-open {
   z-index: 1000;
 }
 
-.news-modal.active {
+.modal-noticia.ativo {
   display: grid;
 }
 
-.news-modal-content {
+.modal-noticia-conteudo {
   position: relative;
   width: min(760px, 94vw);
   background: #f4f1e8;
@@ -401,7 +426,7 @@ body.modal-open {
   padding: 18px 18px 22px;
 }
 
-.news-modal-content img {
+.modal-noticia-conteudo img {
   width: 100%;
   height: auto;
   max-height: 52vh;
@@ -412,14 +437,14 @@ body.modal-open {
   display: block;
 }
 
-.news-modal-content h4 {
+.modal-noticia-conteudo h4 {
   font-family: "Cinzel", serif;
   color: #2c2c2c;
   font-size: clamp(1.1rem, 2.4vw, 1.7rem);
   margin: 0 0 14px;
 }
 
-.news-read-button {
+.botao-ler-noticia {
   border: 0;
   border-radius: 999px;
   padding: 12px 20px;
@@ -429,13 +454,13 @@ body.modal-open {
   cursor: pointer;
 }
 
-.news-actions {
+.acoes-noticia {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
 
-.news-link-button {
+.botao-link-noticia {
   border: 0;
   border-radius: 999px;
   padding: 12px 20px;
@@ -445,10 +470,236 @@ body.modal-open {
   cursor: pointer;
 }
 
-.news-modal-close {
+.modal-noticia-fechar {
   position: absolute;
   top: 8px;
   right: 8px;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* QUIZ */
+.quiz {
+  background: transparent;
+  color: #2c2c2c;
+  padding: 0;
+}
+
+.quiz-conteiner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.quiz-introducao h2 {
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.6rem, 3.4vw, 2.8rem);
+  color: var(--vinho);
+  margin-bottom: 12px;
+}
+
+.quiz-introducao p {
+  font-size: 1.05rem;
+  max-width: 360px;
+}
+
+.formulario-quiz {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 22px 22px 26px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  background-image: radial-gradient(circle at top, rgba(127, 141, 61, 0.1), transparent 60%);
+}
+
+.progresso-quiz {
+  font-family: "Cinzel", serif;
+  color: var(--vinho);
+  font-size: 1.1rem;
+  text-align: right;
+}
+
+.etapas-quiz {
+  margin-top: 12px;
+}
+
+.etapa-quiz {
+  display: none;
+  gap: 14px;
+}
+
+.etapa-quiz.ativo {
+  display: grid;
+}
+
+.titulo-pergunta-quiz {
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.25rem, 2.6vw, 1.7rem);
+  color: #1f1f1f;
+}
+
+.opcoes-quiz {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.opcao-quiz {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #f7f3e6;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  aspect-ratio: 1 / 1;
+  font-size: 1.08rem;
+}
+
+.opcao-quiz input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.opcao-quiz:hover {
+  background: rgba(127, 141, 61, 0.12);
+  transform: translateY(-2px);
+}
+
+.opcao-quiz.selecionado {
+  border-color: var(--verde-escuro);
+  background: rgba(127, 141, 61, 0.25);
+}
+
+.botao-proximo-quiz {
+  justify-self: end;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-size: 1.05rem;
+  cursor: pointer;
+  background: var(--verde-escuro);
+  color: #fff;
+}
+
+.botao-proximo-quiz:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.acoes-quiz {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.acoes-quiz.oculto {
+  display: none;
+}
+
+.botao-reiniciar-quiz {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-size: 1.05rem;
+  cursor: pointer;
+  background: var(--vinho);
+  color: #fff;
+}
+
+.resultado-quiz {
+  margin-top: 16px;
+  font-size: 1.15rem;
+  color: #1f1f1f;
+}
+
+.formulario-quiz.finalizado .etapas-quiz {
+  display: none;
+}
+
+.formulario-quiz.finalizado .progresso-quiz {
+  opacity: 0.7;
+}
+
+/* CTA QUIZ */
+.chamada-quiz {
+  background: var(--verde-oliva);
+  padding: 34px 0 44px;
+}
+
+.chamada-quiz-conteiner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  color: var(--vinho);
+}
+
+.chamada-quiz-conteiner h3 {
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+}
+
+.botao-abrir-quiz {
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 26px;
+  font-size: 1.05rem;
+  background: var(--vinho);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgba(90, 2, 47, 0.45);
+  animation: pulsoQuiz 1.6s ease-in-out infinite;
+}
+
+@keyframes pulsoQuiz {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(90, 2, 47, 0.45); }
+  50% { transform: scale(1.05); box-shadow: 0 0 0 16px rgba(90, 2, 47, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(90, 2, 47, 0); }
+}
+
+/* MODAL QUIZ */
+.modal-quiz {
+  position: fixed;
+  inset: 0;
+  display: none;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  z-index: 1001;
+}
+
+.modal-quiz.ativo {
+  display: grid;
+}
+
+.modal-quiz-conteudo {
+  position: relative;
+  width: min(980px, 96vw);
+  background: #f4f1e8;
+  color: #2c2c2c;
+  border-radius: 16px;
+  padding: 22px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-quiz-fechar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   width: 38px;
   height: 38px;
   border: 0;
